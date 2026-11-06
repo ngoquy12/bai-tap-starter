@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Hub - Bảng điều khiển (giao diện mẫu)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Mã nền (có sẵn): khung MainLayout (src/components/MainLayout.jsx). Chỉ để xem giao diện tổng thể, KHÔNG phải làm. -->
+  <div class="container py-3">
+    <header class="d-flex flex-wrap align-items-center gap-3 mb-3">
+      <h1 class="h3 m-0">Task Hub</h1>
+      <nav class="nav">
+        <a class="nav-link active" href="#">Bảng điều khiển</a>
+        <a class="nav-link" href="#">Công việc</a>
+        <a class="nav-link" href="#">Nhân viên</a>
+      </nav>
+      <span class="ms-auto">Xin chào, Nguyễn Văn An</span>
+      <button class="btn btn-outline-secondary btn-sm">Đăng xuất</button>
+    </header>
+
+    <main>
+      <!-- Component: DashboardPage (src/pages/DashboardPage.jsx) -->
+      <h2 class="h4 mb-3">Bảng điều khiển</h2>
+
+      <!-- Mã nền (có sẵn): WeatherWidget (src/components/WeatherWidget.jsx), nhận thành phố qua prop city. KHÔNG phải làm. -->
+      <section class="card mb-3" aria-label="Thời tiết văn phòng">
+        <div class="card-body">
+          <h2 class="h5">Thời tiết văn phòng</h2>
+          <div>
+            <p class="mb-1">Hà Nội: 25,5°C, Nhiều mây</p>
+            <p class="mb-1">Độ ẩm: 88%</p>
+            <p class="mb-1">Gió: 5 km/h</p>
+          </div>
+          <small class="text-muted">Dữ liệu thời tiết: Open-Meteo.com</small>
+        </div>
+      </section>
+
+      <div>
+        <!-- Component: GlobalSearch (src/components/GlobalSearch.jsx) -->
+        <section class="mb-3">
+          <label for="global-search" class="form-label">Tìm trong Task Hub</label>
+          <input id="global-search" type="text" class="form-control" value="kiểm thử">
+          <div class="mt-2">
+            <h3 class="h6">Nhân viên (1)</h3>
+            <ul class="list-group mb-2">
+              <!-- Lặp lại cho mỗi nhân viên tìm được; mỗi mục là một Link tới /employees/<_id> -->
+              <li class="list-group-item"><a href="#">Hoàng Minh Đức</a></li>
+            </ul>
+            <h3 class="h6">Công việc (2)</h3>
+            <ul class="list-group">
+              <!-- Lặp lại cho mỗi công việc tìm được; mỗi mục là một Link tới /tasks/<_id> -->
+              <li class="list-group-item"><a href="#">Kiểm thử chức năng đăng nhập</a></li>
+              <li class="list-group-item"><a href="#">Thiết lập môi trường kiểm thử tự động</a></li>
+            </ul>
+          </div>
+        </section>
+        <!-- Hết: GlobalSearch -->
+
+        <!-- Component: StatCard (src/components/StatCard.jsx): lặp ba lần với props label và value, mỗi thẻ nằm trong một cột -->
+        <div class="row g-3 mb-4">
+          <div class="col-12 col-md-4">
+            <div class="card text-center" role="group" aria-label="Tổng công việc">
+              <div class="card-body">
+                <div class="text-muted">Tổng công việc</div>
+                <strong class="fs-3">12</strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-center" role="group" aria-label="Đang làm">
+              <div class="card-body">
+                <div class="text-muted">Đang làm</div>
+                <strong class="fs-3">5</strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-center" role="group" aria-label="Hoàn thành">
+              <div class="card-body">
+                <div class="text-muted">Hoàn thành</div>
+                <strong class="fs-3">3</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Hết: StatCard -->
+
+        <!-- Component: EmployeeProgress (src/components/EmployeeProgress.jsx) -->
+        <section class="mb-4">
+          <h3 class="h5">Tiến độ theo nhân viên</h3>
+          <ul class="list-group">
+            <!-- Lặp lại cho mỗi nhân viên đang làm hoặc thử việc; width của progress-bar là phần trăm tính được -->
+            <li class="list-group-item">
+              <div class="mb-1">Phạm Thu Dung: 1/1 (100%)</div>
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" aria-label="Phạm Thu Dung" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" style="width: 100%"></div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="mb-1">Hoàng Minh Đức: 1/2 (50%)</div>
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" aria-label="Hoàng Minh Đức" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="width: 50%"></div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="mb-1">Lê Hoàng Cường: 1/2 (50%)</div>
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" aria-label="Lê Hoàng Cường" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="width: 50%"></div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="mb-1">Đặng Quốc Huy: 0/2 (0%)</div>
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" aria-label="Đặng Quốc Huy" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%"></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <!-- Hết: EmployeeProgress -->
+
+        <!-- Component: OverdueList (src/components/OverdueList.jsx) -->
+        <section class="mb-4">
+          <h3 class="h5">Công việc quá hạn</h3>
+          <ul class="list-group">
+            <!-- Lặp lại cho mỗi công việc quá hạn (tối đa 5); nút Xong có aria-label "Hoàn thành <tiêu đề>" -->
+            <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+              <span>Kiểm thử chức năng đăng nhập - Người nhận: Hoàng Minh Đức - Hạn: 08/11/2026</span>
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Hoàn thành Kiểm thử chức năng đăng nhập">Xong</button>
+            </li>
+            <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+              <span>Chuẩn bị buổi phỏng vấn ứng viên frontend - Người nhận: Trần Thị Bình - Hạn: 09/11/2026</span>
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Hoàn thành Chuẩn bị buổi phỏng vấn ứng viên frontend">Xong</button>
+            </li>
+            <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+              <span>Viết tài liệu API cho module thanh toán - Người nhận: Nguyễn Văn An - Hạn: 10/11/2026</span>
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Hoàn thành Viết tài liệu API cho module thanh toán">Xong</button>
+            </li>
+          </ul>
+        </section>
+        <!-- Hết: OverdueList -->
+      </div>
+      <!-- Hết: DashboardPage -->
+
+      <hr class="my-5">
+
+      <!-- Bảng trạng thái: các trạng thái đặc biệt, mỗi khối là một phần của component nêu trong chú thích -->
+      <h2 class="h4">Bảng trạng thái</h2>
+      <p class="text-muted">Các khối dưới đây chỉ hiện trong những tình huống riêng, không phải màn hình thật.</p>
+
+      <h3 class="h6">Đang tải bảng điều khiển (DashboardPage)</h3>
+      <div role="status" class="d-flex align-items-center gap-2 mb-3">
+        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span>Đang tải bảng điều khiển...</span>
+      </div>
+
+      <h3 class="h6">Tải bảng điều khiển lỗi, có nút Thử lại (DashboardPage, thay cho tìm kiếm, số liệu, tiến độ và việc quá hạn)</h3>
+      <div role="alert" class="alert alert-danger d-flex justify-content-between align-items-center">
+        <span>Không tải được bảng điều khiển: Máy chủ đang gặp sự cố, hãy thử lại sau.</span>
+        <button type="button" class="btn btn-sm btn-outline-danger">Thử lại</button>
+      </div>
+
+      <h3 class="h6">Đổi trạng thái lỗi (DashboardPage, đặt phía trên mục Công việc quá hạn)</h3>
+      <p role="alert" class="alert alert-danger">Không cập nhật được: Máy chủ đang gặp sự cố, hãy thử lại sau.</p>
+
+      <h3 class="h6">Nút Xong đang lưu (OverdueList, nút bị vô hiệu hóa)</h3>
+      <ul class="list-group mb-3">
+        <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+          <span>Kiểm thử chức năng đăng nhập - Người nhận: Hoàng Minh Đức - Hạn: 08/11/2026</span>
+          <button type="button" class="btn btn-sm btn-outline-success" aria-label="Hoàn thành Kiểm thử chức năng đăng nhập" disabled>Xong</button>
+        </li>
+      </ul>
+
+      <h3 class="h6">Không có công việc quá hạn (OverdueList)</h3>
+      <section class="mb-3">
+        <h3 class="h5">Công việc quá hạn</h3>
+        <p class="text-muted">Không có công việc quá hạn.</p>
+      </section>
+
+      <h3 class="h6">Công việc quá hạn chưa có người nhận (OverdueList, thay phần Người nhận bằng Chưa giao)</h3>
+      <ul class="list-group mb-3">
+        <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+          <span>Dọn kho tài liệu - Chưa giao - Hạn: 05/11/2026</span>
+          <button type="button" class="btn btn-sm btn-outline-success" aria-label="Hoàn thành Dọn kho tài liệu">Xong</button>
+        </li>
+      </ul>
+
+      <h3 class="h6">Không có kết quả tìm (GlobalSearch)</h3>
+      <p class="text-muted">Không có kết quả cho "zzz".</p>
+    </main>
+  </div>
+</body>
+</html>

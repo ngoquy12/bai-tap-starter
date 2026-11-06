@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Không tìm thấy trang - Task Hub</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<!-- Component: MainLayout (src/components/MainLayout.jsx) -->
+<!-- Trong React, NavLink tự thêm lớp "active" cho liên kết khớp URL; trong mẫu này lớp được gõ tay. Phần <main> bên dưới là chỗ của Outlet. -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container flex-wrap">
+    <h1 class="navbar-brand h1 mb-0">Task Hub</h1>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link active" href="cong_viec.html">Công việc</a></li>
+      <li class="nav-item"><a class="nav-link" href="nhan_vien.html">Nhân viên</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-2">
+      <span class="navbar-text">Xin chào, Nguyễn Văn An</span>
+      <button type="button" class="btn btn-outline-light btn-sm">Đăng xuất</button>
+    </div>
+  </div>
+</nav>
+<!-- Hết: MainLayout -->
+<main class="container py-4">
+  <!-- Component: NotFoundPage (src/pages/NotFoundPage.jsx) -->
+  <div class="text-center py-5">
+    <h2 class="h3">Không tìm thấy trang</h2>
+    <p class="text-body-secondary">Đường dẫn bạn mở không tồn tại.</p>
+    <a class="btn btn-primary" href="cong_viec.html">Về danh sách công việc</a>
+  </div>
+  <!-- Hết: NotFoundPage -->
+</main>
+
+<!-- ===== Bảng trạng thái (chỉ để xem; không phải màn hình thật) ===== -->
+<div class="container pb-5"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "rikkei-react-exercise",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "seed": "node scripts/seed.mjs"
+  },
+  "dependencies": {
+    "axios": "1.7.9",
+    "bootstrap": "5.3.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.30.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@vitejs/plugin-react": "4.4.1",
+    "jsdom": "26.1.0",
+    "vite": "6.3.5",
+    "vitest": "3.1.4"
+  }
+}

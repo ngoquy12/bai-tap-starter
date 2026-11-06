@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết nhân viên (giao diện mẫu)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <!-- Component: MainLayout (src/components/MainLayout.jsx) -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <h1 class="navbar-brand h4 mb-0">Quản lý nhân viên</h1>
+      <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="danh_sach.html">Nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="form.html">Thêm nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dang_nhap.html">Đăng nhập</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Hết: MainLayout -->
+
+  <!-- Vị trí của Outlet: nội dung của từng trang nằm trong main -->
+  <main class="container py-4">
+    <!-- Component: EmployeeDetailPage (src/pages/EmployeeDetailPage.jsx) -->
+    <section>
+      <!-- Component: EmployeeCard (src/components/EmployeeCard.jsx), mã nền có sẵn -->
+      <article class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-title h5">Lê Hoàng Cường</h3>
+          <p class="card-subtitle text-muted mb-2">Trưởng nhóm kinh doanh - Kinh doanh</p>
+          <p class="mb-1">cuong.le@example.com</p>
+          <p class="mb-1">Lương: 22.000.000 đ</p>
+          <p class="mb-1">Thành phố: Đà Nẵng</p>
+          <p class="mb-2">Vào làm: 20/01/2020</p>
+          <span class="badge text-bg-success">Đang làm việc</span>
+        </div>
+      </article>
+      <!-- Hết: EmployeeCard -->
+      <div class="d-flex gap-2">
+        <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+        <button type="button" class="btn btn-outline-secondary">Quay lại</button>
+      </div>
+    </section>
+    <!-- Hết: EmployeeDetailPage -->
+  </main>
+
+  <!-- ===== Bảng trạng thái (không phải màn hình thật, chỉ để đối chiếu các trạng thái) ===== -->
+  <section class="container pb-5">
+    <hr>
+    <h2 class="h5 text-muted">Bảng trạng thái</h2>
+    <p class="small fw-bold text-uppercase text-muted mt-4 mb-2">Không tìm thấy nhân viên (id 99 hoặc abc)</p>
+    <!-- Component: EmployeeDetailPage, nhánh không tìm thấy -->
+    <section class="alert alert-warning">
+      <p class="mb-2">Không tìm thấy nhân viên 99</p>
+      <a class="btn btn-outline-primary btn-sm" href="danh_sach.html">Về danh sách nhân viên</a>
+    </section>
+    <!-- Hết: EmployeeDetailPage, nhánh không tìm thấy -->
+    <p class="small fw-bold text-uppercase text-muted mt-4 mb-2">Nhân viên thử việc và đã nghỉ việc</p>
+    <span class="badge text-bg-warning">Thử việc</span>
+    <span class="badge text-bg-secondary">Đã nghỉ việc</span>
+
+  </section>
+</body>
+</html>

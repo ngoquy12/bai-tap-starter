@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task Hub - giao diện mẫu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="h2 mb-3">Task Hub</h1>
+
+      <!-- ============ PHẦN 1: MÀN HÌNH THẬT ============ -->
+      <!-- Hai khối đầu (TaskForm, TaskFilters) là phần bạn chuyển sang JSX. Khối TaskBoard và các khối lồng bên trong là mã nền, đã làm sẵn trong starter, đưa vào đây để bạn thấy toàn bộ trang. -->
+
+      <!-- Component: TaskForm (src/components/TaskForm.jsx) -->
+      <form class="mb-3">
+        <div class="row g-2 align-items-end">
+          <div class="col-md-4">
+            <label for="task-title" class="form-label">Tên công việc</label>
+            <input id="task-title" class="form-control" value="" />
+          </div>
+          <div class="col-md-2">
+            <label for="task-priority" class="form-label">Độ ưu tiên</label>
+            <select id="task-priority" class="form-select">
+              <option value="low">Thấp</option>
+              <option value="medium" selected>Trung bình</option>
+              <option value="high">Cao</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="task-assignee" class="form-label">Người nhận</label>
+            <select id="task-assignee" class="form-select">
+              <option value="" selected>Chưa giao</option>
+              <option value="1">Nguyễn Văn An</option>
+              <option value="2">Trần Thị Bình</option>
+              <option value="3">Lê Hoàng Cường</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="task-due" class="form-label">Hạn hoàn thành</label>
+            <input id="task-due" type="date" class="form-control" value="" />
+          </div>
+          <div class="col-md-1 d-grid">
+            <button type="submit" class="btn btn-primary">Thêm công việc</button>
+          </div>
+        </div>
+      </form>
+      <!-- Hết: TaskForm -->
+
+      <!-- Component: TaskFilters (src/components/TaskFilters.jsx) -->
+      <div class="row g-2 align-items-end mb-3">
+        <div class="col-md-4">
+          <label for="filter-query" class="form-label">Tìm công việc</label>
+          <input id="filter-query" class="form-control" value="" />
+        </div>
+        <div class="col-md-3">
+          <label for="filter-priority" class="form-label">Lọc độ ưu tiên</label>
+          <select id="filter-priority" class="form-select">
+            <option value="all" selected>Tất cả</option>
+            <option value="low">Thấp</option>
+            <option value="medium">Trung bình</option>
+            <option value="high">Cao</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="filter-assignee" class="form-label">Lọc người nhận</label>
+          <select id="filter-assignee" class="form-select">
+            <option value="all" selected>Tất cả</option>
+            <option value="unassigned">Chưa giao</option>
+            <option value="1">Nguyễn Văn An</option>
+            <option value="2">Trần Thị Bình</option>
+            <option value="3">Lê Hoàng Cường</option>
+          </select>
+        </div>
+        <div class="col-md-2 d-grid">
+          <button type="button" class="btn btn-outline-secondary">Xóa bộ lọc</button>
+        </div>
+      </div>
+      <!-- Hết: TaskFilters -->
+
+      <!-- Component: TaskBoard (src/components/TaskBoard.jsx) - mã nền, đã làm sẵn -->
+      <div>
+        <p class="mb-1 fw-semibold">Tổng: 30 công việc | Quá hạn: 4</p>
+        <p class="text-secondary">Đang hiển thị 30 / 30 công việc</p>
+        <div class="row g-3">
+          <!-- Component: TaskColumn (src/components/TaskColumn.jsx) - mã nền, cột Cần làm -->
+          <section class="col-md-4">
+            <div class="bg-light rounded p-3">
+              <h3 class="h5 mb-3">Cần làm (13)</h3>
+              <ul class="list-unstyled mb-0">
+                <!-- Component: TaskCard (src/components/TaskCard.jsx) - mã nền, thẻ cần làm -->
+                <li class="card mb-2">
+                  <div class="card-body p-3">
+                    <h4 class="h6 card-title">Cập nhật bảng lương tháng 11</h4>
+                    <div class="mb-2">
+                      <span class="badge text-bg-danger">Cao</span>
+                    </div>
+                    <p class="card-text small mb-1">Người nhận: Bùi Lan Khanh</p>
+                    <p class="card-text small text-secondary mb-2">Hạn: 25/11/2026</p>
+                    <button type="button" class="btn btn-sm btn-outline-primary">Bắt đầu</button>
+                  </div>
+                </li>
+                <!-- Hết: TaskCard -->
+              </ul>
+            </div>
+          </section>
+          <!-- Hết: TaskColumn -->
+
+          <!-- Component: TaskColumn (src/components/TaskColumn.jsx) - mã nền, cột Đang làm -->
+          <section class="col-md-4">
+            <div class="bg-light rounded p-3">
+              <h3 class="h5 mb-3">Đang làm (9)</h3>
+              <ul class="list-unstyled mb-0">
+                <!-- Component: TaskCard (src/components/TaskCard.jsx) - mã nền, thẻ đang làm -->
+                <li class="card mb-2">
+                  <div class="card-body p-3">
+                    <h4 class="h6 card-title">Soạn báo giá cho khách hàng mới</h4>
+                    <div class="mb-2">
+                      <span class="badge text-bg-warning">Trung bình</span>
+                    </div>
+                    <p class="card-text small mb-1">Người nhận: Lê Hoàng Cường</p>
+                    <p class="card-text small text-secondary mb-2">Hạn: 13/11/2026</p>
+                    <button type="button" class="btn btn-sm btn-outline-primary">Hoàn thành</button>
+                  </div>
+                </li>
+                <!-- Hết: TaskCard -->
+              </ul>
+            </div>
+          </section>
+          <!-- Hết: TaskColumn -->
+
+          <!-- Component: TaskColumn (src/components/TaskColumn.jsx) - mã nền, cột Hoàn thành -->
+          <section class="col-md-4">
+            <div class="bg-light rounded p-3">
+              <h3 class="h5 mb-3">Hoàn thành (8)</h3>
+              <ul class="list-unstyled mb-0">
+                <!-- Component: TaskCard (src/components/TaskCard.jsx) - mã nền, thẻ hoàn thành -->
+                <li class="card mb-2">
+                  <div class="card-body p-3">
+                    <h4 class="h6 card-title text-decoration-line-through">Đối soát hóa đơn tháng 10</h4>
+                    <div class="mb-2">
+                      <span class="badge text-bg-danger">Cao</span>
+                    </div>
+                    <p class="card-text small mb-1">Người nhận: Phạm Thu Dung</p>
+                    <p class="card-text small text-secondary mb-2">Hạn: 03/11/2026</p>
+                    <button type="button" class="btn btn-sm btn-outline-primary">Mở lại</button>
+                  </div>
+                </li>
+                <!-- Hết: TaskCard -->
+              </ul>
+            </div>
+          </section>
+          <!-- Hết: TaskColumn -->
+        </div>
+      </div>
+      <!-- Hết: TaskBoard -->
+
+      <hr class="my-5" />
+
+      <!-- ============ PHẦN 2: BẢNG TRẠNG THÁI ============ -->
+      <!-- Các khối dưới đây chỉ để xem từng trạng thái đặc biệt, KHÔNG phải màn hình thật. -->
+      <h2 class="h4 mb-3">Bảng trạng thái</h2>
+
+      <h3 class="h6 text-secondary">Form báo lỗi (tên rỗng hoặc thiếu hạn)</h3>
+      <!-- Component: TaskForm (src/components/TaskForm.jsx) - trạng thái có lỗi -->
+      <form class="mb-4">
+        <div class="row g-2 align-items-end">
+          <div class="col-md-4">
+            <label for="error-title" class="form-label">Tên công việc</label>
+            <input id="error-title" class="form-control" value="" />
+          </div>
+          <div class="col-md-2">
+            <label for="error-priority" class="form-label">Độ ưu tiên</label>
+            <select id="error-priority" class="form-select">
+              <option value="low">Thấp</option>
+              <option value="medium" selected>Trung bình</option>
+              <option value="high">Cao</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="error-assignee" class="form-label">Người nhận</label>
+            <select id="error-assignee" class="form-select">
+              <option value="" selected>Chưa giao</option>
+              <option value="1">Nguyễn Văn An</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="error-due" class="form-label">Hạn hoàn thành</label>
+            <input id="error-due" type="date" class="form-control" value="" />
+          </div>
+          <div class="col-md-1 d-grid">
+            <button type="submit" class="btn btn-primary">Thêm công việc</button>
+          </div>
+        </div>
+        <div class="alert alert-danger mt-2 mb-0" role="alert">Vui lòng nhập tên công việc.</div>
+      </form>
+      <!-- Hết: TaskForm -->
+
+      <h3 class="h6 text-secondary">Cột rỗng</h3>
+      <div class="row g-3 mb-4">
+        <!-- Component: TaskColumn (src/components/TaskColumn.jsx) - cột không có công việc -->
+        <section class="col-md-4">
+          <div class="bg-light rounded p-3">
+            <h3 class="h5 mb-3">Hoàn thành (0)</h3>
+            <p class="text-secondary mb-0">Không có công việc nào.</p>
+          </div>
+        </section>
+        <!-- Hết: TaskColumn -->
+      </div>
+
+      <h3 class="h6 text-secondary">Thẻ quá hạn, thẻ chưa giao</h3>
+      <div class="row g-3 mb-4">
+        <div class="col-md-4">
+          <ul class="list-unstyled mb-0">
+            <!-- Component: TaskCard (src/components/TaskCard.jsx) - thẻ quá hạn -->
+            <li class="card mb-2">
+              <div class="card-body p-3">
+                <h4 class="h6 card-title">Chuẩn bị buổi phỏng vấn ứng viên frontend</h4>
+                <div class="mb-2">
+                  <span class="badge text-bg-danger">Cao</span>
+                  <span class="badge text-bg-danger ms-1">Quá hạn</span>
+                </div>
+                <p class="card-text small mb-1">Người nhận: Trần Thị Bình</p>
+                <p class="card-text small text-secondary mb-2">Hạn: 09/11/2026</p>
+                <button type="button" class="btn btn-sm btn-outline-primary">Bắt đầu</button>
+              </div>
+            </li>
+            <!-- Hết: TaskCard -->
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-unstyled mb-0">
+            <!-- Component: TaskCard (src/components/TaskCard.jsx) - thẻ chưa giao -->
+            <li class="card mb-2">
+              <div class="card-body p-3">
+                <h4 class="h6 card-title">Dọn kho lưu trữ</h4>
+                <div class="mb-2">
+                  <span class="badge text-bg-warning">Trung bình</span>
+                </div>
+                <p class="card-text small mb-1">Chưa giao</p>
+                <p class="card-text small text-secondary mb-2">Hạn: 02/12/2026</p>
+                <button type="button" class="btn btn-sm btn-outline-primary">Bắt đầu</button>
+              </div>
+            </li>
+            <!-- Hết: TaskCard -->
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="h6 text-secondary">Huy hiệu độ ưu tiên</h3>
+      <p>
+        <!-- Component: PriorityBadge (src/components/PriorityBadge.jsx) - mã nền, ba mức -->
+        <span class="badge text-bg-info">Thấp</span>
+        <span class="badge text-bg-warning">Trung bình</span>
+        <span class="badge text-bg-danger">Cao</span>
+        <!-- Hết: PriorityBadge -->
+      </p>
+
+      <h3 class="h6 text-secondary">Bộ lọc không có kết quả</h3>
+      <div class="mb-4">
+        <p class="text-secondary">Đang hiển thị 0 / 30 công việc</p>
+      </div>
+    </div>
+  </body>
+</html>

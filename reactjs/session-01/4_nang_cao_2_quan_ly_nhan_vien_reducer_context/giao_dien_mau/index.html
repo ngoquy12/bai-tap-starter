@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giao diện mẫu: Quản lý nhân viên</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  </head>
+  <body class="bg-light">
+    <main class="container py-4">
+      <!--
+        Giao diện mẫu của Bài 4. Dữ liệu trong tệp này là dữ liệu cứng.
+        Mỗi khối nằm giữa hai chú thích "Component: ..." và "Hết: ...".
+        Khối ghi "mã nền" đã được làm sẵn trong starter (chỉ để bạn thấy đủ màn hình, không phải chuyển).
+        Khối ghi "BẠN CHUYỂN" là phần bạn chuyển sang JSX trong EmployeeManager.jsx.
+      -->
+      <h1 class="h3 mb-4">Quản lý nhân viên Rikkei</h1>
+
+      <!-- ===== MÀN HÌNH CHÍNH ===== -->
+
+      <!-- Component: EmployeeManager, phần tiêu đề form (src/components/EmployeeManager.jsx) - BẠN CHUYỂN -->
+      <h2 class="h5 mb-3">Thêm nhân viên</h2>
+      <!-- Hết: EmployeeManager, phần tiêu đề form -->
+
+      <!-- Component: EmployeeForm (src/components/EmployeeForm.jsx) - mã nền, đã làm sẵn -->
+      <form class="card card-body mb-3" novalidate>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="emp-name" class="form-label">Họ tên</label>
+            <input id="emp-name" name="name" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="emp-email" class="form-label">Email</label>
+            <input id="emp-email" name="email" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="emp-department" class="form-label">Phòng ban</label>
+            <select id="emp-department" name="department" class="form-select">
+              <option value="Kỹ thuật">Kỹ thuật</option>
+              <option value="Nhân sự">Nhân sự</option>
+              <option value="Kinh doanh">Kinh doanh</option>
+              <option value="Kế toán">Kế toán</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="emp-position" class="form-label">Vị trí</label>
+            <input id="emp-position" name="position" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="emp-salary" class="form-label">Lương</label>
+            <input id="emp-salary" name="salary" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="emp-city" class="form-label">Thành phố</label>
+            <select id="emp-city" name="city" class="form-select">
+              <option value="Hà Nội">Hà Nội</option>
+              <option value="Đà Nẵng">Đà Nẵng</option>
+              <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+              <option value="Huế">Huế</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="emp-status" class="form-label">Trạng thái</label>
+            <select id="emp-status" name="status" class="form-select">
+              <option value="active">Đang làm việc</option>
+              <option value="probation">Thử việc</option>
+              <option value="resigned">Đã nghỉ việc</option>
+            </select>
+          </div>
+          <div class="col-12 d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Thêm</button>
+          </div>
+        </div>
+      </form>
+      <!-- Hết: EmployeeForm -->
+
+      <!-- Component: EmployeeManager, thông báo kết quả (src/components/EmployeeManager.jsx) - BẠN CHUYỂN -->
+      <!-- Có thông báo: thẻ div có role="status" và lớp alert alert-success. Chưa có thông báo: thẻ div role="status" để trống, không có lớp alert. -->
+      <div role="status" class="alert alert-success">Đã thêm nhân viên Phan Văn Test.</div>
+      <!-- Hết: EmployeeManager, thông báo kết quả -->
+
+      <!-- Component: DepartmentSummary (src/components/DepartmentSummary.jsx) - mã nền, đã làm sẵn -->
+      <section class="mb-4">
+        <h2 class="h5 mb-3">Thống kê theo phòng ban</h2>
+        <ul class="list-group">
+          <li class="list-group-item">Kỹ thuật: 4 người, lương 84.500.000 đ</li>
+          <li class="list-group-item">Nhân sự: 3 người, lương 57.000.000 đ</li>
+          <li class="list-group-item">Kinh doanh: 2 người, lương 34.000.000 đ</li>
+          <li class="list-group-item">Kế toán: 2 người, lương 22.500.000 đ</li>
+        </ul>
+      </section>
+      <!-- Hết: DepartmentSummary -->
+
+      <!-- Component: EmployeeManager, ô tìm kiếm (src/components/EmployeeManager.jsx) - BẠN CHUYỂN -->
+      <div class="mb-3">
+        <label for="employee-search" class="form-label">Tìm nhân viên</label>
+        <input id="employee-search" class="form-control" />
+      </div>
+      <!-- Hết: EmployeeManager, ô tìm kiếm -->
+
+      <!-- Component: EmployeeList (src/components/EmployeeList.jsx) - mã nền, đã làm sẵn -->
+      <section class="mb-4">
+        <h2 class="h5 mb-3">Danh sách nhân viên (12)</h2>
+        <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 list-unstyled">
+          <!-- Component: EmployeeCard (src/components/EmployeeCard.jsx) - mã nền, đã làm sẵn. Thẻ đầu là mẫu của một phần tử lặp, thẻ sau chỉ minh họa. -->
+          <li class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h5 card-title">Nguyễn Văn An</h3>
+                <p class="card-text mb-1">Lập trình viên - Kỹ thuật</p>
+                <p class="card-text mb-1">an.nguyen@example.com</p>
+                <p class="card-text mb-1">Lương: 18.000.000 đ</p>
+                <p class="card-text mb-1">Hà Nội</p>
+                <p class="card-text mb-2">Vào làm: 14/03/2022</p>
+                <span class="badge text-bg-success">Đang làm việc</span>
+                <div class="d-flex gap-2 mt-3">
+                  <button type="button" class="btn btn-sm btn-outline-primary">Sửa Nguyễn Văn An</button>
+                  <button type="button" class="btn btn-sm btn-outline-danger">Xóa Nguyễn Văn An</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Hết: EmployeeCard -->
+          <li class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h5 card-title">Trần Thị Bình</h3>
+                <p class="card-text mb-1">Chuyên viên tuyển dụng - Nhân sự</p>
+                <p class="card-text mb-1">binh.tran@example.com</p>
+                <p class="card-text mb-1">Lương: 15.000.000 đ</p>
+                <p class="card-text mb-1">Hà Nội</p>
+                <p class="card-text mb-2">Vào làm: 01/07/2021</p>
+                <span class="badge text-bg-success">Đang làm việc</span>
+                <div class="d-flex gap-2 mt-3">
+                  <button type="button" class="btn btn-sm btn-outline-primary">Sửa Trần Thị Bình</button>
+                  <button type="button" class="btn btn-sm btn-outline-danger">Xóa Trần Thị Bình</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- Hết: EmployeeList -->
+
+      <!-- ===== BẢNG TRẠNG THÁI: các tình huống của ứng dụng, không phải màn hình thật ===== -->
+      <hr class="my-5" />
+      <h2 class="h4 mb-4">Bảng trạng thái</h2>
+
+      <h3 class="h6 text-muted">Trạng thái 1: form có lỗi (EmployeeForm nhận prop errors; ô lỗi có lớp is-invalid, câu lỗi nằm trong invalid-feedback)</h3>
+      <form class="card card-body mb-4" novalidate>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="err-name" class="form-label">Họ tên</label>
+            <input id="err-name" name="name" class="form-control is-invalid" />
+            <div class="invalid-feedback" role="alert">Vui lòng nhập họ tên.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="err-email" class="form-label">Email</label>
+            <input id="err-email" name="email" class="form-control is-invalid" />
+            <div class="invalid-feedback" role="alert">Email không hợp lệ.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="err-email-dup" class="form-label">Email (trường hợp trùng)</label>
+            <input id="err-email-dup" name="email" class="form-control is-invalid" />
+            <div class="invalid-feedback" role="alert">Email này đã tồn tại.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="err-salary" class="form-label">Lương</label>
+            <input id="err-salary" name="salary" class="form-control is-invalid" />
+            <div class="invalid-feedback" role="alert">Lương phải là số lớn hơn 0.</div>
+          </div>
+          <div class="col-12 d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Thêm</button>
+          </div>
+        </div>
+      </form>
+
+      <h3 class="h6 text-muted">Trạng thái 2: đang sửa nhân viên (tiêu đề đổi, nút Thêm thành Lưu, có thêm nút Hủy)</h3>
+      <h2 class="h5 mb-3">Sửa nhân viên</h2>
+      <form class="card card-body mb-4" novalidate>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="edit-name" class="form-label">Họ tên</label>
+            <input id="edit-name" name="name" class="form-control" value="Trần Thị Bình" />
+          </div>
+          <div class="col-md-4">
+            <label for="edit-email" class="form-label">Email</label>
+            <input id="edit-email" name="email" class="form-control" value="binh.tran@example.com" />
+          </div>
+          <div class="col-md-4">
+            <label for="edit-salary" class="form-label">Lương</label>
+            <input id="edit-salary" name="salary" class="form-control" value="15000000" />
+          </div>
+          <div class="col-12 d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <button type="button" class="btn btn-outline-secondary">Hủy</button>
+          </div>
+        </div>
+      </form>
+
+      <h3 class="h6 text-muted">Trạng thái 3: thẻ nhân viên thử việc (huy hiệu text-bg-warning) và đã nghỉ việc (thẻ mờ opacity-50, huy hiệu text-bg-secondary, không hiện lương)</h3>
+      <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 list-unstyled mb-4">
+        <li class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="h5 card-title">Hoàng Minh Đức</h3>
+              <p class="card-text mb-1">Kỹ sư kiểm thử - Kỹ thuật</p>
+              <p class="card-text mb-1">duc.hoang@example.com</p>
+              <p class="card-text mb-1">Lương: 17.000.000 đ</p>
+              <p class="card-text mb-1">Đà Nẵng</p>
+              <p class="card-text mb-2">Vào làm: 15/09/2026</p>
+              <span class="badge text-bg-warning">Thử việc</span>
+            </div>
+          </div>
+        </li>
+        <li class="col opacity-50">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="h5 card-title">Đỗ Mai Phương</h3>
+              <p class="card-text mb-1">Chuyên viên chăm sóc khách hàng - Kinh doanh</p>
+              <p class="card-text mb-1">phuong.do@example.com</p>
+              <p class="card-text mb-1">Huế</p>
+              <p class="card-text mb-2">Vào làm: 19/04/2021</p>
+              <span class="badge text-bg-secondary">Đã nghỉ việc</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h3 class="h6 text-muted">Trạng thái 4: danh sách rỗng và tìm không thấy</h3>
+      <section class="mb-4">
+        <h2 class="h5 mb-3">Danh sách nhân viên (0)</h2>
+        <p class="text-muted">Chưa có nhân viên nào.</p>
+        <p class="text-muted">Không có nhân viên phù hợp.</p>
+      </section>
+
+      <h3 class="h6 text-muted">Trạng thái 5: chưa có thống kê phòng ban</h3>
+      <section class="mb-4">
+        <h2 class="h5 mb-3">Thống kê theo phòng ban</h2>
+        <p class="text-muted">Chưa có dữ liệu phòng ban.</p>
+      </section>
+
+      <h3 class="h6 text-muted">Trạng thái 6: các thông báo kết quả khác (cùng khối role="status")</h3>
+      <div role="status" class="alert alert-success">Đã cập nhật nhân viên Trần Thị Bình An.</div>
+      <div role="status" class="alert alert-success">Đã xóa nhân viên Trần Thị Bình.</div>
+    </main>
+  </body>
+</html>

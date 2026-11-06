@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giao diện mẫu: Danh bạ nhân viên Rikkei</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="bg-light">
+    <!-- ========== MÀN HÌNH THẬT: trang danh bạ (dữ liệu cứng, 3 nhân viên mẫu) ========== -->
+    <main class="container py-4">
+      <!-- Mã nền: App (src/App.jsx), có sẵn, không phải chuyển -->
+      <h1 class="h2 mb-4">Danh bạ nhân viên Rikkei</h1>
+
+      <section aria-label="Tóm tắt nhân viên" class="mb-4">
+        <!-- Component: EmployeeSummary (src/components/EmployeeSummary.jsx) -->
+        <div class="alert alert-info mb-0">
+          <p class="mb-1">Đang làm việc: 9 | Thử việc: 2 | Đã nghỉ việc: 1</p>
+          <p class="mb-0 fw-bold">Tổng: 12</p>
+        </div>
+        <!-- Hết: EmployeeSummary -->
+      </section>
+
+      <section aria-label="Danh sách nhân viên">
+        <!-- Component: EmployeeList (src/components/EmployeeList.jsx) -->
+        <div>
+          <h2 class="h4 mb-3">Danh sách nhân viên (3)</h2>
+          <ul class="list-unstyled row g-3">
+            <!-- Mỗi nhân viên một li; ba li dưới đây là ba ca mẫu: đang làm việc, thử việc kiêm nhân viên mới, đã nghỉ việc -->
+            <li class="col-12 col-md-6 col-lg-4">
+              <!-- Component: EmployeeCard (src/components/EmployeeCard.jsx) -->
+              <article class="card h-100">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Nguyễn Văn An</h3>
+                  <p class="card-text text-muted mb-1">Lập trình viên - Kỹ thuật</p>
+                  <p class="card-text mb-1">Email: an.nguyen@example.com</p>
+                  <p class="card-text mb-1">Lương: 18.000.000 đ</p>
+                  <p class="card-text mb-1">Thành phố: Hà Nội</p>
+                  <p class="card-text mb-2">Vào làm: 14/03/2022</p>
+                  <p class="mb-0">
+                    <!-- Component: StatusBadge (src/components/StatusBadge.jsx) -->
+                    <span class="badge text-bg-success">Đang làm việc</span>
+                    <!-- Hết: StatusBadge -->
+                  </p>
+                </div>
+              </article>
+              <!-- Hết: EmployeeCard -->
+            </li>
+            <li class="col-12 col-md-6 col-lg-4">
+              <article class="card h-100">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Hoàng Minh Đức</h3>
+                  <p class="card-text text-muted mb-1">Kỹ sư kiểm thử - Kỹ thuật</p>
+                  <p class="card-text mb-1">Email: duc.hoang@example.com</p>
+                  <p class="card-text mb-1">Lương: 17.000.000 đ</p>
+                  <p class="card-text mb-1">Thành phố: Đà Nẵng</p>
+                  <p class="card-text mb-2">Vào làm: 15/09/2026</p>
+                  <p class="mb-0">
+                    <span class="badge text-bg-warning">Thử việc</span>
+                    <span class="badge text-bg-primary ms-2">Nhân viên mới</span>
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="col-12 col-md-6 col-lg-4">
+              <!-- Nhân viên đã nghỉ việc: thẻ mờ (opacity-50), không có dòng lương, không có nhãn Nhân viên mới -->
+              <article class="card h-100 opacity-50">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Đỗ Mai Phương</h3>
+                  <p class="card-text text-muted mb-1">Chuyên viên chăm sóc khách hàng - Kinh doanh</p>
+                  <p class="card-text mb-1">Email: phuong.do@example.com</p>
+                  <p class="card-text mb-1">Thành phố: Huế</p>
+                  <p class="card-text mb-2">Vào làm: 19/04/2021</p>
+                  <p class="mb-0">
+                    <span class="badge text-bg-secondary">Đã nghỉ việc</span>
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+        <!-- Hết: EmployeeList -->
+      </section>
+    </main>
+
+    <!-- ========== BẢNG TRẠNG THÁI: các trường hợp riêng, không phải màn hình thật ========== -->
+    <section class="container pb-5 border-top pt-4" aria-label="Bảng trạng thái">
+      <h2 class="h4 mb-3">Bảng trạng thái</h2>
+      <p class="text-muted">
+        Bài này chỉ đọc dữ liệu có sẵn nên không có trạng thái đang tải hay lỗi.
+      </p>
+
+      <h3 class="h6">Trạng thái: bốn nhãn của StatusBadge</h3>
+      <p>
+        <span class="badge text-bg-success">Đang làm việc</span>
+        <span class="badge text-bg-warning">Thử việc</span>
+        <span class="badge text-bg-secondary">Đã nghỉ việc</span>
+        <span class="badge text-bg-secondary">Không rõ</span>
+      </p>
+
+      <h3 class="h6">Trạng thái: danh sách rỗng</h3>
+      <div class="mb-3">
+        <h2 class="h4 mb-3">Danh sách nhân viên (0)</h2>
+        <p class="text-muted">Chưa có nhân viên nào.</p>
+      </div>
+
+      <h3 class="h6">Trạng thái: tóm tắt khi không có nhân viên</h3>
+      <div class="alert alert-info mb-0">
+        <p class="mb-1">Đang làm việc: 0 | Thử việc: 0 | Đã nghỉ việc: 0</p>
+        <p class="mb-0 fw-bold">Tổng: 0</p>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giao diện mẫu: Quản lý nhân viên</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <!-- Component: MainLayout (src/components/MainLayout.jsx) -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <h1 class="navbar-brand h4 mb-0">Quản lý nhân viên</h1>
+      <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="danh_sach.html">Nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="form.html">Thêm nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dang_nhap.html">Đăng nhập</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Hết: MainLayout -->
+
+  <main class="container py-4">
+    <h2 class="h4 mb-3">Giao diện mẫu của ứng dụng quản lý nhân viên</h2>
+    <p class="text-muted">Mỗi trang dưới đây là một màn hình của ứng dụng. Dữ liệu trong mẫu là dữ liệu cứng. Phần cuối mỗi trang có "Bảng trạng thái" để đối chiếu các trạng thái (rỗng, lỗi, đã đăng nhập...).</p>
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action" href="danh_sach.html">Danh sách nhân viên (EmployeesPage)</a>
+      <a class="list-group-item list-group-item-action" href="chi_tiet.html">Chi tiết nhân viên (EmployeeDetailPage, EmployeeCard)</a>
+      <a class="list-group-item list-group-item-action" href="form.html">Thêm và sửa nhân viên (EmployeeFormPage, EmployeeForm)</a>
+      <a class="list-group-item list-group-item-action" href="dang_nhap.html">Đăng nhập (LoginPage)</a>
+      <a class="list-group-item list-group-item-action" href="khong_tim_thay.html">Không tìm thấy trang (NotFoundPage)</a>
+    </div>
+  </main>
+</body>
+</html>

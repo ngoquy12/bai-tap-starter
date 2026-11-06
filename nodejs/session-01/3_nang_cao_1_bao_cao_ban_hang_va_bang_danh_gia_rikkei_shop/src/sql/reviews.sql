@@ -1,0 +1,3 @@
+-- ===== BÀI LÀM: lệnh CREATE TABLE reviews và chỉ mục idx_reviews_product_rating =====
+-- TODO: viết bảng reviews theo mục "Phần A" của đề bài.
+-- TODO: thêm lệnh CREATE INDEX cho cặp cột (product_id, rating).

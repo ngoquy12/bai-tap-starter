@@ -1,0 +1,190 @@
+{
+  "employees": [
+    {
+      "code": "NV01",
+      "name": "Nguyễn Văn An",
+      "email": "an.nguyen@example.com",
+      "department": "Kỹ thuật",
+      "position": "Lập trình viên",
+      "salary": 18000000,
+      "city": "Hà Nội",
+      "status": "active",
+      "joinedAt": "2022-03-14"
+    },
+    {
+      "code": "NV02",
+      "name": "Trần Thị Bình",
+      "email": "binh.tran@example.com",
+      "department": "Nhân sự",
+      "position": "Chuyên viên tuyển dụng",
+      "salary": 15000000,
+      "city": "Hà Nội",
+      "status": "active",
+      "joinedAt": "2021-07-01"
+    },
+    {
+      "code": "NV03",
+      "name": "Lê Hoàng Cường",
+      "email": "cuong.le@example.com",
+      "department": "Kinh doanh",
+      "position": "Trưởng nhóm kinh doanh",
+      "salary": 22000000,
+      "city": "Đà Nẵng",
+      "status": "active",
+      "joinedAt": "2020-01-20"
+    },
+    {
+      "code": "NV04",
+      "name": "Phạm Thu Dung",
+      "email": "dung.pham@example.com",
+      "department": "Kế toán",
+      "position": "Kế toán tổng hợp",
+      "salary": 16500000,
+      "city": "TP. Hồ Chí Minh",
+      "status": "active",
+      "joinedAt": "2022-09-05"
+    },
+    {
+      "code": "NV05",
+      "name": "Hoàng Minh Đức",
+      "email": "duc.hoang@example.com",
+      "department": "Kỹ thuật",
+      "position": "Kỹ sư kiểm thử",
+      "salary": 17000000,
+      "city": "Đà Nẵng",
+      "status": "probation",
+      "joinedAt": "2026-09-15"
+    },
+    {
+      "code": "NV06",
+      "name": "Vũ Ngọc Hà",
+      "email": "ha.vu@example.com",
+      "department": "Kinh doanh",
+      "position": "Nhân viên kinh doanh",
+      "salary": 12000000,
+      "city": "TP. Hồ Chí Minh",
+      "status": "active",
+      "joinedAt": "2023-02-10"
+    },
+    {
+      "code": "NV07",
+      "name": "Đặng Quốc Huy",
+      "email": "huy.dang@example.com",
+      "department": "Kỹ thuật",
+      "position": "Trưởng nhóm kỹ thuật",
+      "salary": 30000000,
+      "city": "Hà Nội",
+      "status": "active",
+      "joinedAt": "2019-05-27"
+    },
+    {
+      "code": "NV08",
+      "name": "Bùi Lan Khanh",
+      "email": "khanh.bui@example.com",
+      "department": "Nhân sự",
+      "position": "Trưởng phòng nhân sự",
+      "salary": 28000000,
+      "city": "Huế",
+      "status": "active",
+      "joinedAt": "2018-11-12"
+    }
+  ],
+  "tasks": [
+    {
+      "code": "CV01",
+      "title": "Viết tài liệu API cho module thanh toán",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-11-10",
+      "assigneeCode": "NV01"
+    },
+    {
+      "code": "CV02",
+      "title": "Chuẩn bị buổi phỏng vấn ứng viên frontend",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": "2026-11-09",
+      "assigneeCode": "NV02"
+    },
+    {
+      "code": "CV03",
+      "title": "Đối soát hóa đơn tháng 10",
+      "status": "done",
+      "priority": "high",
+      "dueDate": "2026-11-03",
+      "assigneeCode": "NV04"
+    },
+    {
+      "code": "CV04",
+      "title": "Gọi điện chăm sóc 20 khách hàng cũ",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": "2026-11-11",
+      "assigneeCode": "NV06"
+    },
+    {
+      "code": "CV05",
+      "title": "Cập nhật bảng lương tháng 11",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": "2026-11-25",
+      "assigneeCode": "NV08"
+    },
+    {
+      "code": "CV06",
+      "title": "Kiểm thử chức năng đăng nhập",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-11-08",
+      "assigneeCode": "NV05"
+    },
+    {
+      "code": "CV07",
+      "title": "Họp tổng kết quý 3 với ban giám đốc",
+      "status": "done",
+      "priority": "medium",
+      "dueDate": "2026-10-30",
+      "assigneeCode": "NV03"
+    },
+    {
+      "code": "CV08",
+      "title": "Soạn báo giá cho khách hàng mới",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": "2026-11-13",
+      "assigneeCode": "NV03"
+    },
+    {
+      "code": "CV09",
+      "title": "Nâng cấp thư viện React lên bản ổn định",
+      "status": "todo",
+      "priority": "low",
+      "dueDate": "2026-12-01",
+      "assigneeCode": "NV07"
+    },
+    {
+      "code": "CV10",
+      "title": "Thiết lập môi trường kiểm thử tự động",
+      "status": "done",
+      "priority": "medium",
+      "dueDate": "2026-11-01",
+      "assigneeCode": "NV05"
+    },
+    {
+      "code": "CV11",
+      "title": "Tối ưu truy vấn danh sách đơn hàng",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-11-14",
+      "assigneeCode": "NV07"
+    },
+    {
+      "code": "CV12",
+      "title": "Thiết kế lại trang đăng ký khóa học",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": "2026-11-22",
+      "assigneeCode": "NV01"
+    }
+  ]
+}

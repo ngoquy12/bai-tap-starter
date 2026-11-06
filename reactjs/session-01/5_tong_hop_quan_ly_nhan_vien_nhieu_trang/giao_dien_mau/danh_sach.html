@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danh sách nhân viên (giao diện mẫu)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <!-- Component: MainLayout (src/components/MainLayout.jsx) -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <h1 class="navbar-brand h4 mb-0">Quản lý nhân viên</h1>
+      <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="danh_sach.html">Nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="form.html">Thêm nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dang_nhap.html">Đăng nhập</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Hết: MainLayout -->
+
+  <!-- Vị trí của Outlet: nội dung của từng trang nằm trong main -->
+  <main class="container py-4">
+    <!-- Component: EmployeesPage (src/pages/EmployeesPage.jsx) -->
+    <section>
+      <h2 class="h4 mb-3">Danh sách nhân viên</h2>
+      <input type="search" class="form-control mb-3" aria-label="Tìm nhân viên" placeholder="Tìm nhân viên">
+      <div class="btn-group flex-wrap mb-3" role="group" aria-label="Lọc theo phòng ban">
+        <button type="button" class="btn btn-primary" aria-pressed="true">Tất cả</button>
+        <button type="button" class="btn btn-outline-primary" aria-pressed="false">Kỹ thuật</button>
+        <button type="button" class="btn btn-outline-primary" aria-pressed="false">Nhân sự</button>
+        <button type="button" class="btn btn-outline-primary" aria-pressed="false">Kinh doanh</button>
+        <button type="button" class="btn btn-outline-primary" aria-pressed="false">Kế toán</button>
+      </div>
+      <p class="text-muted">Tìm thấy 12 nhân viên</p>
+      <!-- Một phần tử lặp: mỗi nhân viên một li -->
+      <ul class="list-group">
+        <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <div>
+            <a class="fw-bold text-decoration-none" href="chi_tiet.html">Nguyễn Văn An</a>
+            <div class="small text-muted">Lập trình viên - Kỹ thuật</div>
+          </div>
+          <span class="badge text-bg-success">Đang làm việc</span>
+        </li>
+      </ul>
+    </section>
+    <!-- Hết: EmployeesPage -->
+
+    <!-- Component: StatusBadge (src/components/StatusBadge.jsx), mã nền có sẵn, ba màu theo trạng thái -->
+    <div class="mt-4">
+      <span class="badge text-bg-success">Đang làm việc</span>
+      <span class="badge text-bg-warning">Thử việc</span>
+      <span class="badge text-bg-secondary">Đã nghỉ việc</span>
+    </div>
+    <!-- Hết: StatusBadge -->
+  </main>
+
+  <!-- ===== Bảng trạng thái (không phải màn hình thật, chỉ để đối chiếu các trạng thái) ===== -->
+  <section class="container pb-5">
+    <hr>
+    <h2 class="h5 text-muted">Bảng trạng thái</h2>
+    <p class="small fw-bold text-uppercase text-muted mt-4 mb-2">Nút lọc đang chọn là Kỹ thuật, ô tìm có chữ an</p>
+    <input type="search" class="form-control mb-3" aria-label="Tìm nhân viên" placeholder="Tìm nhân viên" value="an">
+    <div class="btn-group flex-wrap mb-3" role="group" aria-label="Lọc theo phòng ban">
+      <button type="button" class="btn btn-outline-primary" aria-pressed="false">Tất cả</button>
+      <button type="button" class="btn btn-primary" aria-pressed="true">Kỹ thuật</button>
+    </div>
+    <p class="small fw-bold text-uppercase text-muted mt-4 mb-2">Danh sách rỗng</p>
+    <div class="alert alert-warning">Không có nhân viên phù hợp.</div>
+    <p class="small fw-bold text-uppercase text-muted mt-4 mb-2">Nhân viên đã nghỉ việc</p>
+    <ul class="list-group">
+      <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div>
+          <a class="fw-bold text-decoration-none" href="chi_tiet.html">Đỗ Mai Phương</a>
+          <div class="small text-muted">Chuyên viên chăm sóc khách hàng - Kinh doanh</div>
+        </div>
+        <span class="badge text-bg-secondary">Đã nghỉ việc</span>
+      </li>
+    </ul>
+    <p class="small fw-bold text-uppercase text-muted mt-4 mb-2">Đã đăng nhập: thanh điều hướng thay liên kết Đăng nhập bằng lời chào và nút Đăng xuất</p>
+  <!-- Component: MainLayout (src/components/MainLayout.jsx) -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <h1 class="navbar-brand h4 mb-0">Quản lý nhân viên</h1>
+      <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="danh_sach.html">Nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="form.html">Thêm nhân viên</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text text-white">Xin chào, Nguyễn Văn An</span>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-light btn-sm">Đăng xuất</button>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Hết: MainLayout -->
+
+  </section>
+</body>
+</html>

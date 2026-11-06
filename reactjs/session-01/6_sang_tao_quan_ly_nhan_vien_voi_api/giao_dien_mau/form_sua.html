@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sửa nhân viên</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Component: MainLayout (src/components/MainLayout.jsx) -->
+  <nav class="navbar navbar-expand navbar-dark bg-primary">
+    <div class="container">
+      <h1 class="navbar-brand h5 mb-0">Quản lý nhân viên Rikkei</h1>
+      <div class="navbar-nav" aria-label="Điều hướng chính">
+          <a class="nav-link" href="danh_sach.html">Danh sách</a>
+          <a class="nav-link" href="form_them.html">Thêm nhân viên</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Hết: MainLayout -->
+
+  <main class="container py-4">
+    <h2 class="h4 mb-3">Sửa nhân viên</h2>
+    <div class="card">
+      <div class="card-body">
+        <!-- Trang sửa: src/pages/EmployeeEditPage.jsx (nạp bản ghi cũ vào EmployeeForm) -->
+        <!-- Component: EmployeeForm (src/components/EmployeeForm.jsx, mã nền đã chuyển sẵn) -->
+        <form class="row g-3" novalidate>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="name">Họ tên</label>
+          <input class="form-control" id="name" name="name" value="Nguyễn Văn An">
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-control" id="email" name="email" value="an.nguyen@example.com">
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="department">Phòng ban</label>
+          <select class="form-select" id="department" name="department">
+            <option value="Kỹ thuật" selected>Kỹ thuật</option>
+            <option value="Nhân sự">Nhân sự</option>
+            <option value="Kinh doanh">Kinh doanh</option>
+            <option value="Kế toán">Kế toán</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="position">Vị trí</label>
+          <input class="form-control" id="position" name="position" value="Lập trình viên">
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="salary">Lương</label>
+          <input class="form-control" id="salary" name="salary" value="18000000">
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="city">Thành phố</label>
+          <select class="form-select" id="city" name="city">
+            <option value="Hà Nội" selected>Hà Nội</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+            <option value="Huế">Huế</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="status">Trạng thái</label>
+          <select class="form-select" id="status" name="status">
+            <option value="active" selected>Đang làm việc</option>
+            <option value="probation">Thử việc</option>
+            <option value="resigned">Đã nghỉ việc</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="joinedAt">Ngày vào làm</label>
+          <input class="form-control" id="joinedAt" name="joinedAt" type="date" value="2022-03-14">
+        </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+            <a class="btn btn-link" href="danh_sach.html">Hủy</a>
+          </div>
+        </form>
+        <!-- Hết: EmployeeForm -->
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
