@@ -1,0 +1,2 @@
+-- P2 (Mức AI: AI-0): các index bạn đề xuất sau khi đọc EXPLAIN của src/sql/p2_queries.js.
+-- Mỗi index một câu CREATE INDEX, kết thúc bằng dấu chấm phẩy. Tệp chỉ có chú thích thì npm run p2 đo trạng thái ban đầu.

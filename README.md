@@ -26,6 +26,8 @@ reactjs/
 nodejs/
   session-01/   6 bài (buổi Lý thuyết NodeJS, Express và MySQL, Rikkei Shop)
   session-02/   6 bài (buổi Thực hành NodeJS, Rikkei Learn)
+  session-03/   bai_tap_ve_nha_sql_nang_cao: một dự án cho các bài tập về nhà SQL nâng cao (Rikkei Shop)
+  session-04/   buổi Thực hành SQL nâng cao: lab_guide.md, lab_sql_nang_cao, bai_tong_hop_tren_lop_bao_cao_danh_gia, bai_thuc_hanh_ve_nha_ma_giam_gia
 ```
 
 ## Quy tắc

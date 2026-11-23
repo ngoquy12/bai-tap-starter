@@ -1,0 +1,7 @@
+-- C1 (Mức AI: AI-0): bảng nhà cung cấp và bảng nối sản phẩm - nhà cung cấp.
+-- Tệp gửi một lần bằng mysql2 (nhiều câu lệnh, mỗi câu kết thúc bằng dấu chấm phẩy).
+-- Đầu vào: cơ sở dữ liệu rikkei_shop_sql đã có bảng products.
+-- Đầu ra: hai bảng mới, ENGINE = InnoDB, kiểu khóa INT UNSIGNED như db/schema.sql.
+--   suppliers: id, name, phone.
+--   product_suppliers: product_id, supplier_id, import_price.
+-- Ràng buộc từng cột: xem bảng "Quy tắc nghiệp vụ" của bài C1 trong de_bai.md.

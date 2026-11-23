@@ -1,0 +1,3 @@
+-- N1 (Mức AI: AI-0): index phục vụ trang "đơn giá trị cao của một khách".
+-- Đầu vào: bảng orders của db/schema.sql.
+-- Đầu ra: một index tên idx_orders_user_total; chọn cột và thứ tự cột theo bài N1 trong de_bai.md.

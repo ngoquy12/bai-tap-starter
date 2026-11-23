@@ -1,0 +1,74 @@
+-- Rikkei Shop cho phần SQL nâng cao (Session 03-04): lược đồ MySQL 8 (InnoDB, utf8mb4). Không chứa CREATE DATABASE hay USE.
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS product_tags;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS user_profiles;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS categories;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE categories (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE
+) ENGINE = InnoDB;
+
+CREATE TABLE products (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    category_id INT UNSIGNED NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    price INT UNSIGNED NOT NULL,
+    stock INT UNSIGNED NOT NULL DEFAULT 0,
+    CONSTRAINT fk_products_category FOREIGN KEY (category_id)
+        REFERENCES categories (id) ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE users (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    full_name VARCHAR(100) NOT NULL
+) ENGINE = InnoDB;
+
+CREATE TABLE user_profiles (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNSIGNED NOT NULL UNIQUE,
+    phone VARCHAR(15) NOT NULL,
+    address VARCHAR(200) NOT NULL,
+    CONSTRAINT fk_profiles_user FOREIGN KEY (user_id)
+        REFERENCES users (id) ON DELETE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE tags (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE
+) ENGINE = InnoDB;
+
+CREATE TABLE product_tags (
+    product_id INT UNSIGNED NOT NULL,
+    tag_id INT UNSIGNED NOT NULL,
+    PRIMARY KEY (product_id, tag_id),
+    CONSTRAINT fk_pt_product FOREIGN KEY (product_id)
+        REFERENCES products (id) ON DELETE CASCADE,
+    CONSTRAINT fk_pt_tag FOREIGN KEY (tag_id)
+        REFERENCES tags (id) ON DELETE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE orders (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNSIGNED NULL,
+    total INT UNSIGNED NOT NULL,
+    CONSTRAINT fk_orders_user FOREIGN KEY (user_id)
+        REFERENCES users (id) ON DELETE SET NULL
+) ENGINE = InnoDB;
+
+CREATE TABLE order_items (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    order_id INT UNSIGNED NOT NULL,
+    product_id INT UNSIGNED NOT NULL,
+    quantity INT UNSIGNED NOT NULL,
+    unit_price INT UNSIGNED NOT NULL,
+    CONSTRAINT fk_items_order FOREIGN KEY (order_id) REFERENCES orders (id) ON DELETE CASCADE,
+    CONSTRAINT fk_items_product FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE RESTRICT
+) ENGINE = InnoDB;

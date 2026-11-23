@@ -1,0 +1,30 @@
+{
+  "name": "rikkei-shop-coupon-module",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Bài thực hành về nhà Session 04: mô-đun mã giảm giá Rikkei Shop (MySQL)",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:setup": "node scripts/db-setup.js",
+    "db:coupons": "node scripts/db-coupons.js"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "cors": "2.8.5",
+    "dotenv": "16.4.7",
+    "express": "4.21.2",
+    "express-rate-limit": "7.5.0",
+    "helmet": "8.0.0",
+    "jsonwebtoken": "9.0.2",
+    "morgan": "1.10.0",
+    "mysql2": "3.11.5",
+    "zod": "3.24.1"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.9",
+    "supertest": "7.0.0",
+    "vitest": "3.1.4"
+  }
+}
